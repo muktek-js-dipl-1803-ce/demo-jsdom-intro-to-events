@@ -7,35 +7,37 @@ img{
 	width: 100%;
 }
 
-.top, .left, .bottom, .right{
-   position: fixed;
-   height: 50%;
-   width: 50%;
+.full{
+   top: 0; left: 0;
+   height: 100%;
+   width: 100%;
    text-align: center;
    padding: 20px;
 }
 
-.top.left{
-   background: #BE90D4;
+.top, .bottom{
+   position: fixed;
+   height: 50%;
+   width: 100%;
+   text-align: center;
+   padding: 20px;
+}
+
+.top{
    top: 0; left: 0;
 }
 
 
-.top.right{
-   background: #E26A6A;
-   top: 0; right: 0;
-
-}
-
-.bottom.left{
+.bottom{
    background: #86E2D5;
-   bottom: 0; left: 0;
+   top: 50%; left: 0;
 }
 
-.bottom.right{
-   background: #F4B350;
-   bottom: 0; right: 0;
-}
+.ex-01{ background: #89C4F4 !important; }
+.ex-02{ background: #BE90D4 !important;}
+.ex-03{ background: #66CC99 !important; }
+.ex-04{ background: #EB974E !important; }
+
 
 .button,
 button,
@@ -43,13 +45,14 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"] {
   display: inline-block;
-  height: 38px;
-  padding: 0 30px;
+  height: initial;
+  padding: 20px 20px;
+  margin: 15px;
   color: #555;
   text-align: center;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 38px;
+  line-height: initial;
   letter-spacing: .1rem;
   text-transform: uppercase;
   text-decoration: none;
@@ -128,7 +131,7 @@ button.adder {
    height: 100%;
    width: 50%;
    text-align: center;
-   padding: 20px;	
+   padding: 20px;
 }
 .left-side{
 	left: 0;
@@ -163,4 +166,10 @@ button.adder {
 	padding: 5		px;
 	border: 2px #fff solid;
 	margin: 4px 1%;
+}
+
+.yo-yo{
+  display: inline-block;
+  background-color: lightyellow;
+  padding: 15px;
 }
