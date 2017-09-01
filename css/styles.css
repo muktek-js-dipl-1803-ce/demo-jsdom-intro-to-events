@@ -133,11 +133,7 @@ button.adder {
    text-align: center;
    padding: 20px;
 }
-.left-side{
-	left: 0;
-	background: #34495E;
-   color: #fff;
-}
+
 .right-side{
 	left: 50%;
 	color: #34495E;
