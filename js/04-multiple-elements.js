@@ -4,30 +4,33 @@
 /// where an event happened
 //-------------------------------------------------k
 
-var collectionItemEls = document.querySelectorAll('.collection-item')
-var collectionItemElsArray = [...collectionItemEls]
-console.log(collectionItemEls)
+var collectionItemNodeList = document.querySelectorAll('.collection-item')
+var collectionItemElsArray = [ ...collectionItemNodeList ]
 
-// *** NOOOO You can't do this...
-// addButtonEls.addEventListener("click", function(){
-// 	console.log('rats')
-// })
 
-// *** Easiest to iterate over the array of elements and
-function plusClickHandler(evt){
-  var domElementOfEvent = evt.target
-  var currentTargetDOMEl = evt.currentTarget
+function handlePlusBtnClick(evtObj){
 
-  if(domElementOfEvent.className === 'adder' ){
-    var itemNameEl = currentTargetDOMEl.querySelector('.item-name')
-    var cartListContainerEl =  document.querySelector('.your-cart')
+  var divClickedDomEl = evtObj.currentTarget
+  var exactClickedDomEl = evtObj.target
 
-    cartListContainerEl.innerHTML +=  '<li>' + itemNameEl.textContent + '</li>'
+  console.log(exactClickedDomEl)
+
+  if(exactClickedDomEl.tagName.toUpperCase() === 'BUTTON'){
+    var cartListDomEl = document.querySelector('.your-cart')
+    var itemNameDomEl = divClickedDomEl.querySelector('.item-name')
+    console.log(itemNameDomEl)
+    cartListDomEl.innerHTML += `<li>${itemNameDomEl.textContent}</li>`
   }
+
+  console.log('---')
+
 }
 
-function addListenerToItem( domElement, index, theArray ){
-	domElement.addEventListener('click', plusClickHandler )
-}
+// NO!, we cannot put .addEventListener(...) on an array
+// collectionItemElsArray.addEventListener("click", ...)
 
-forEach( collectionItemElsArray , addListenerToItem )
+
+// (1)
+collectionItemElsArray.forEach(function putEventListenerOnCollItemEl(collItemDomEl, i){
+  collItemDomEl.addEventListener('click', handlePlusBtnClick )
+})

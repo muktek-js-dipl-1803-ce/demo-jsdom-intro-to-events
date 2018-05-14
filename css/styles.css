@@ -132,6 +132,7 @@ button.adder {
    width: 50%;
    text-align: center;
    padding: 20px;
+   overflow: scroll;
 }
 
 .right-side{
@@ -167,4 +168,10 @@ button.adder {
   display: inline-block;
   background-color: lightyellow;
   padding: 15px;
+}
+
+
+.urgent{
+  background: indianred;
+  color: #ffffff;
 }

@@ -1,9 +1,11 @@
 // B : using the event-handler function to modify another element
 //--------------------------------------------
-var writeBtn = document.querySelector('.write-btn')
-var writeSomething = function(){
-   // it all happens here...
-   var el = document.querySelector('.top.right')
-   el.innerHTML = '<h3>This appeared from clicking <code>button.write-btn</code> elsewhere</h3>'
+
+var btnDomEl = document.querySelector('.write-btn')
+
+function writeMsgToDiv(){
+  var msgDomEl = document.querySelector('.msg')
+  msgDomEl.textContent = 'The button was clicked'
 }
-writeBtn.addEventListener('click', writeSomething)
+
+btnDomEl.addEventListener('click', writeMsgToDiv )
